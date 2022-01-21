@@ -1,7 +1,7 @@
 /* *****************************************************************************
- *  Name:
- *  Date:
- *  Description:
+ *  Name: Arjun Sriram
+ *  Date: 1/21/2022
+ *  Description: Create a Deque data structure
  **************************************************************************** */
 
 import java.util.Iterator;
@@ -39,7 +39,7 @@ public class Deque<Item> implements Iterable<Item> {
 
     // add the item to the front
     public void addFirst(Item item) {
-        if (item == null) throw new IllegalArgumentException("Dumbo");
+        if (item == null) throw new IllegalArgumentException("element is null");
         Node newNode = new Node();
         newNode.item = item;
         if (n == 0) {
@@ -64,7 +64,7 @@ public class Deque<Item> implements Iterable<Item> {
 
     // add the item to the back
     public void addLast(Item item) {
-        if (item == null) throw new IllegalArgumentException("Dumbo");
+        if (item == null) throw new IllegalArgumentException("element is null");
         Node newNode = new Node();
         newNode.item = item;
         if (isEmpty()) {
@@ -135,7 +135,7 @@ public class Deque<Item> implements Iterable<Item> {
         }
 
         public void remove() {
-            throw new UnsupportedOperationException("Cant call remove");
+            throw new UnsupportedOperationException("Unsupported operation");
         }
 
         public Item next() {
@@ -148,14 +148,14 @@ public class Deque<Item> implements Iterable<Item> {
     }
 
     public static void main(String[] args) {
-        Deque<Integer> lol = new Deque<Integer>();
+        Deque<Integer> deque = new Deque<Integer>();
         for (int i = 0; i < 6; i++) {
-            lol.addLast(i);
+            deque.addLast(i);
         }
-        System.out.println(lol.removeLast());
+        System.out.println(deque.removeLast());
 
         for (int i = 0; i < 5; i++) {
-            System.out.println(lol.removeFirst());
+            System.out.println(deque.removeFirst());
         }
 
 
