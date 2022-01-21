@@ -1,7 +1,7 @@
 /* *****************************************************************************
- *  Name:
- *  Date:
- *  Description:
+ *  Name: Arjun Sriram 
+ *  Date: 1/21/2022
+ *  Description: Create a Randomized Queue data structure using a resizing array
  **************************************************************************** */
 
 import edu.princeton.cs.algs4.StdOut;
@@ -85,22 +85,22 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     private class ArrayIterator implements Iterator<Item> {
         private int i, count1;
-        Item[] lolArray = (Item[]) new Object[n];
+        Item[] newArray = (Item[]) new Object[n];
 
         public ArrayIterator() {
             count1 = 0;
             i = 0;
             for (i = 0; i < arr.length; i++) {
                 if (arr[i] != null) {
-                    lolArray[i] = arr[i];
+                    newArray[i] = arr[i];
                 }
                 else break;
             }
-            StdRandom.shuffle(lolArray);
+            StdRandom.shuffle(newArray);
         }
 
         public boolean hasNext() {
-            return count1 < lolArray.length;
+            return count1 < newArray.length;
         }
 
         public void remove() {
@@ -110,7 +110,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         public Item next() {
             if (!hasNext()) throw new NoSuchElementException();
             if (isEmpty()) throw new NoSuchElementException();
-            return lolArray[count1++];
+            return newArray[count1++];
         }
 
     }
